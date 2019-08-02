@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <div>
+        <label for="email">
+          <span>Email</span>
+          <span class="error" *ngIf="email.invalid && (email.dirty || email.touched)">required</span>
+          <span class="error" *ngIf="getEmailErrorMessage()">{{ getEmailErrorMessage() }}</span>
+        </label>        
+        <input type="email" formControlName="email" id="email" placeholder="Enter email address" 
+      name="email"/>
+      </div>      
+    </div>
+
+    <div>
+      <label for="username">
+        <span>Username</span>
+        <span class="error" *ngIf="username.invalid && (username.dirty || username.touched)">required</span>
+      </label>
+      <input type="text" formControlName="username" id="username" placeholder="Enter username" 
+      name="email"/>
+    </div>
+
+    <div>
+      <label for="password">
+        <span>Password</span>
+        <span class="error" *ngIf="password.invalid && (password.dirty || password.touched)">required</span>
+      </label>
+      <input type="password" formControlName="password" id="password" placeholder="Enter password" 
+      name="password"/>
+    </div>
+
+
+    <div>
+      <button>Sign up</button>
+      <a routerLink="/login">I'm already a member</a>
+    </div>
+  </form>
+</div>

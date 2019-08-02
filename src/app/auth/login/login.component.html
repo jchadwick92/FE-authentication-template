@@ -1,0 +1,26 @@
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">
+        <span>Email</span>
+        <span class="error" *ngIf="getErrorMessage() === 'Invalid email'">{{getErrorMessage()}}</span>
+      </label>
+      <input type="email" formControlName="email" id="email" placeholder="Enter email address" 
+      name="email"/>
+    </div>
+
+    <div>
+      <label for="password">
+        <span>Password</span>
+        <span class="error" *ngIf="getErrorMessage() === 'Invalid password'">{{getErrorMessage()}}</span>
+      </label>
+      <input type="password" formControlName="password" id="password" placeholder="Enter password" 
+      name="password"/>
+    </div>
+
+    <div>
+      <button>Sign In</button>
+      <a routerLink="/register">Create an account</a>
+    </div>
+  </form>
+</div>

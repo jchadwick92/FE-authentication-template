@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <a routerLink="" class="navbar-brand">Home</a>
+  <span class="fill-remaining-space"></span>
+  <div *ngIf="authService.isAuthenticated()">
+    <a>{{ user?.email }}</a>
+    <a (click)="logout()">Logout</a>
+  </div>
+  <div *ngIf='!authService.isAuthenticated()'>
+    <a routerLink="/register">Sign Up</a>
+    <a routerLink="/login">Login</a>
+  </div>
+</nav>
